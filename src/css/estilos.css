@@ -12,7 +12,7 @@ main::after {
     min-height: 100vh;
     width: 80vh;
 
-    background: linear-gradient(92deg, #000 15%, rgba(0, 0, 0, 0) 55%) no-repeat;
+    background: linear-gradient(92deg, #000 25%, rgba(0, 0, 0, 0) 70%) no-repeat;
 }
 
 main .console {

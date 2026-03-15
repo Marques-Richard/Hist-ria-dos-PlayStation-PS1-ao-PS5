@@ -7,7 +7,7 @@
 
     }
 
-    main .pewrsonagem .imagem {
+    main .console .imagem {
         height: 85%;
         object-position: center;
     }
@@ -20,7 +20,7 @@
         padding: 30px;
     }
 
-    .conteudo .nome-personagem {
+    .conteudo .nome-console {
         font-size: 30px;
     }
 
@@ -45,13 +45,19 @@
     }
 }
 
-@media (max-width: 425px) {
-    main .pewrsonagem .imagem {
+@media (max-width: 480px) {
+    main .console .imagem {
         height: auto;
+    }
+
+    main::after {
+        background: linear-gradient(0deg, #000 5%, rgba(0, 0, 0, 0.00) 70%) no-repeat;
+        width: 100vw;
     }
 
     .conteudo {
         top: -20%;
+        max-width: 330px;
     }
 
     .botoes {
