@@ -29,7 +29,7 @@
     }
 
     .botoes {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-end;
         width: 100%;
         padding: 30px;
@@ -45,7 +45,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 425px) {
     main .console .imagem {
         height: auto;
     }
@@ -57,7 +57,6 @@
 
     .conteudo {
         top: -20%;
-        max-width: 330px;
     }
 
     .botoes {

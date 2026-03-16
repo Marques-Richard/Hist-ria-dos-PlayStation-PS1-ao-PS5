@@ -39,7 +39,7 @@ main .console .imagem {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    max-width: 380px;
+    max-width: 370px;
     z-index: 1;
 }
 
@@ -55,7 +55,7 @@ main .console .imagem {
     color: #ffffff;
     font-size: "Rubik";
     font-size: 16px;
-    line-height: 40px;
+    line-height: 24px;
 }
 
 .botoes {
