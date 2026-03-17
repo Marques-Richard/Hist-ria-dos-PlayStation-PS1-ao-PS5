@@ -1,6 +1,6 @@
 body {
     background-color: #000000;
-    overflow: hidden;
+    overflow-x: hidden; /* Evita que a página tenha rolagem horizontal */
 }
 
 main::after {
@@ -40,6 +40,7 @@ main .console .imagem {
     justify-content: center;
     height: 100vh;
     max-width: 370px;
+    padding: 20px;
     z-index: 1;
 }
 
@@ -53,9 +54,14 @@ main .console .imagem {
 
 .conteudo .descricao {
     color: #ffffff;
-    font-size: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-size: 16px;
     line-height: 24px;
+}
+
+img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
+    height: auto; /* Mantém a proporção original das imagens */
 }
 
 .botoes {
