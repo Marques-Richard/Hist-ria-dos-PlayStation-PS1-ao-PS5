@@ -1,8 +1,10 @@
 body {
     background-color: #000000;
-    overflow-x: hidden; /* Evita que a página tenha rolagem horizontal */
+    /* ALTERAÇÃO antes estava overflow: hidden isso bloqueia scroll em celular*/
+    overflow-x: hidden;
 }
 
+/* MELHORIA visual no gradiente */
 main::after {
     content: "";
     position: fixed;
@@ -10,38 +12,55 @@ main::after {
     left: 0;
 
     min-height: 100vh;
-    width: 80vh;
+    width: 40%;
 
-    background: linear-gradient(92deg, #000 25%, rgba(0, 0, 0, 0) 70%) no-repeat;
+    /* ALTERAÇÃO - gradiente mais cinematográfico */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0) 75%) no-repeat;
 }
 
+/* MELHORIA adiciona transição suave entre consoles*/
 main .console {
     display: none;
     height: 100vh;
+
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
 main .console.selecionado {
     display: block;
+    /* ALTERAÇÃO - fade suave */
+    opacity: 1;
 }
 
+/* MELHORIA efeito cinematográfico nas imagens*/
 main .console .imagem {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    transform: scale(1.05);
+    transition: transform 6s ease;
 }
+
 
 .conteudo {
     position: absolute;
-    top: 0;
+    top: 80px;
+    /* ALTERAÇÃO - sobe o conteúdo */
     left: 120px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    max-width: 370px;
-    padding: 20px;
+    justify-content: flex-start;
+    /* ALTERAÇÃO */
+
+    max-width: 420px;
     z-index: 1;
+
+    gap: 20px;
+
+    backdrop-filter: blur(3px);
 }
 
 .conteudo .nome-console {
@@ -50,18 +69,52 @@ main .console .imagem {
     font-family: "Secular One";
     font-weight: 400;
     margin-bottom: 20px;
+    /* MELHORIA sombra estilo game site    */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+
 }
 
+/* ALTERAÇÃO havia erro: font-size: "Rubik"*/
 .conteudo .descricao {
     color: #ffffff;
     font-family: "Rubik", sans-serif;
     font-size: 16px;
     line-height: 24px;
+
+    /* CONTORNO */
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.9),
+        -1px -1px 2px rgba(0, 0, 0, 0.9),
+        0 0 5px rgba(0, 0, 0, 0.8);
+
 }
 
-img {
-    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
-    height: auto; /* Mantém a proporção original das imagens */
+.titulo-jogos {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.jogos {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.jogos img {
+    width: 90px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: 0.3s;
+    aspect-ratio: 2/3;
+}
+
+.jogos img:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 .botoes {
@@ -70,7 +123,6 @@ img {
     top: 0;
     right: 0;
     width: 180px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,10 +139,17 @@ img {
     cursor: pointer;
     transition: transform 0.3s ease;
     border-radius: 50%;
+    /* MELHORIA borda para efeito gamer*/
+    border: 1px solid transparent;
 }
 
 .botoes .botao img {
     border-radius: 50%;
+}
+
+/* MELHORIA interação */
+.botoes .botao:hover {
+    transform: scale(1.2);
 }
 
 .botoes .botao.selecionado {
@@ -99,21 +158,66 @@ img {
 }
 
 .botoes .botao.playstation1.selecionado {
-    box-shadow: 0 0 20px #ff0000;
+    box-shadow:
+        0 0 5px rgba(255, 0, 60, 0.8),
+        0 0 15px rgba(255, 0, 60, 0.9),
+        0 0 30px rgba(255, 0, 60, 1),
+        0 0 60px rgba(255, 0, 60, 0.8);
 }
 
 .botoes .botao.playstation2.selecionado {
-    box-shadow: 0 0 20px #3f3cff;
+    box-shadow:
+        0 0 5px rgba(0, 100, 255, 0.8),
+        0 0 15px rgba(0, 100, 255, 0.9),
+        0 0 30px rgba(0, 100, 255, 1),
+        0 0 60px rgba(0, 100, 255, 0.8);
 }
 
 .botoes .botao.playstation3.selecionado {
-    box-shadow: 0 0 20px #1fff01;
+    box-shadow:
+        0 0 5px rgba(0, 255, 120, 0.8),
+        0 0 15px rgba(0, 255, 120, 0.9),
+        0 0 30px rgba(0, 255, 120, 1),
+        0 0 60px rgba(0, 255, 120, 0.8);
 }
 
 .botoes .botao.playstation4.selecionado {
-    box-shadow: 0 0 20px #ffffff;
+    box-shadow:
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(255, 255, 255, 1),
+        0 0 60px rgba(255, 255, 255, 0.8);
 }
 
 .botoes .botao.playstation5.selecionado {
-    box-shadow: 0 0 20px #05e8ff;
+    box-shadow:
+        0 0 5px rgba(28, 63, 188, 0.8),
+        0 0 15px rgba(28, 63, 188, 0.9),
+        0 0 30px rgba(0, 150, 255, 1),
+        0 0 60px rgba(0, 200, 255, 0.9);
+}
+
+/* MELHORIA animação de brilho para o console selecionado, faz o botaõ pulsar*/
+@keyframes neonPulse {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.botoes .botao.selecionado {
+    animation: neonPulse 2s infinite alternate;
+}
+
+/* MELHORIA GLOBAL evita quebra de layout com imagens*/
+img {
+    max-width: 100%;
+    height: auto;
 }

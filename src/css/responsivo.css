@@ -3,146 +3,225 @@
 @media (max-width: 768px) {
 
     main::after {
-        background: linear-gradient(0deg, #000 40%, rgba(0, 0, 0, 0) 75%) no-repeat;
+
+        /* ALTERAÇÃO gradiente vertical */
+        background: linear-gradient(0deg,
+                #000 40%,
+                rgba(0, 0, 0, 0) 75%) no-repeat;
+
         width: 100vw;
     }
 
     main .console .imagem {
+
         height: 80vh;
+
         object-position: center;
     }
 
     .conteudo {
+
         justify-content: flex-end;
+
         left: 0;
+
         bottom: 120px;
+
         top: auto;
+
         max-width: 100%;
-        padding: 25px;
+
+        padding: 20px;
     }
 
     .conteudo .nome-console {
+
         font-size: 28px;
     }
 
     .conteudo .descricao {
+
         font-size: 14px;
+
         max-width: 500px;
     }
 
+    .jogos {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .jogos img {
+        flex-shrink: 0;
+    }
+
+
     .botoes {
+
+        /* ALTERAÇÃO
+           botões vão para parte inferior
+        */
         flex-direction: row;
+
         align-items: center;
+
         justify-content: center;
+
         width: 100%;
+
         min-height: auto;
+
         height: 110px;
+
         top: auto;
+
         bottom: 0;
+
         padding: 20px;
+
         gap: 12px;
     }
 
     .botoes .botao {
+
         width: 65px;
+
         height: 65px;
     }
 
     .botoes .botao img {
+
         max-width: 65px;
     }
 
 }
-
 
 /* CELULARES MENORES */
 
 @media (max-width: 425px) {
 
     main .console .imagem {
+
         height: 70vh;
     }
 
     main::after {
-        background: linear-gradient(0deg, #000 10%, rgba(0, 0, 0, 0) 70%) no-repeat;
+
+        background: linear-gradient(0deg,
+                #000 10%,
+                rgba(0, 0, 0, 0) 70%) no-repeat;
+
         width: 100vw;
     }
 
     .conteudo {
+
         bottom: 110px;
+
         padding: 20px;
     }
 
     .conteudo .nome-console {
+
         font-size: 24px;
     }
 
     .conteudo .descricao {
+
         font-size: 13px;
+
         line-height: 20px;
     }
 
     .botoes {
+
         height: 100px;
+
         padding: 15px;
     }
 
     .botoes .botao {
+
         width: 50px;
+
         height: 50px;
     }
 
     .botoes .botao img {
+
         max-width: 50px;
     }
 
 }
-
 
 /* CELULAR NA HORIZONTAL */
 
 @media (max-height: 500px) and (orientation: landscape) {
 
     main .console .imagem {
+
         height: 100vh;
+
         object-fit: cover;
     }
 
     main::after {
+
         width: 100vw;
-        background: linear-gradient(90deg, #000 35%, rgba(0,0,0,0) 80%);
+
+        background: linear-gradient(90deg,
+                #000 35%,
+                rgba(0, 0, 0, 0) 80%);
     }
 
     .conteudo {
+
         left: 30px;
+
         max-width: 50%;
+
         padding: 20px;
     }
 
     .conteudo .nome-console {
+
         font-size: 22px;
     }
 
     .conteudo .descricao {
+
         font-size: 12px;
+
         line-height: 18px;
     }
 
     .botoes {
+
+        /* ALTERAÇÃO
+           botões voltam para lateral
+        */
         width: 110px;
+
         flex-direction: column;
+
         height: 100vh;
+
         right: 0;
+
         top: 0;
+
         bottom: auto;
     }
 
     .botoes .botao {
+
         width: 50px;
+
         height: 50px;
     }
 
     .botoes .botao img {
+
         max-width: 50px;
     }
 
