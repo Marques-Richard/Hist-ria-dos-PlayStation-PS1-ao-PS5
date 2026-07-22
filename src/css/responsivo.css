@@ -1,228 +1,395 @@
+/*=========================================================
+  RESPONSIVO.CSS
+  Estilos para dispositivos móveis e tablets
+=========================================================*/
+
+/* TABLETS E CELULARES GRANDES */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-image img {
+        max-width: 350px;
+    }
+    
+    main section {
+        padding: 40px 30px;
+    }
+    
+    .topbar {
+        padding: 0 30px;
+    }
+}
+
 /* TABLETS E CELULARES */
-
 @media (max-width: 768px) {
-
-    main::after {
-
-        /* ALTERAÇÃO gradiente vertical */
-        background: linear-gradient(0deg,
-                #000 40%,
-                rgba(0, 0, 0, 0) 75%) no-repeat;
-
-        width: 100vw;
+    :root {
+        --sidebar-width: 0px;
+        --header-height: 70px;
     }
-
-    main .console .imagem {
-
-        height: 80vh;
-
-        object-position: center;
+    
+    /* Sidebar como menu hamburger */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        transition: .4s ease;
+        z-index: 1001;
+        background: rgba(8,15,30,.95);
     }
-
-    .conteudo {
-
-        justify-content: flex-end;
-
+    
+    .sidebar.open {
         left: 0;
-
-        bottom: 120px;
-
-        top: auto;
-
-        max-width: 100%;
-
-        padding: 20px;
     }
-
-    .conteudo .nome-console {
-
-        font-size: 28px;
+    
+    /* Overlay do menu */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.6);
+        z-index: 1000;
     }
-
-    .conteudo .descricao {
-
-        font-size: 14px;
-
-        max-width: 500px;
+    
+    .sidebar-overlay.active {
+        display: block;
     }
-
-    .jogos {
-        overflow-x: auto;
-        padding-bottom: 10px;
-    }
-
-    .jogos img {
-        flex-shrink: 0;
-    }
-
-
-    .botoes {
-
-        /* ALTERAÇÃO
-           botões vão para parte inferior
-        */
-        flex-direction: row;
-
-        align-items: center;
-
-        justify-content: center;
-
+    
+    /* Main sem margin */
+    main {
+        margin-left: 0;
         width: 100%;
-
+    }
+    
+    main section {
+        padding: 30px 20px;
+    }
+    
+    .topbar {
+        padding: 0 20px;
+        height: var(--header-height);
+    }
+    
+    /* Timeline ajustada */
+    .timeline {
+        gap: 8px;
+    }
+    
+    .timeline .console {
+        width: 60px;
+    }
+    
+    .timeline .console h4 {
+        font-size: .8rem;
+    }
+    
+    .timeline .console span {
+        font-size: .65rem;
+    }
+    
+    .timeline .line {
+        left: 20px;
+        right: 20px;
+    }
+    
+    /* Music player */
+    .music-player {
+        padding: 8px 12px;
+    }
+    
+    .music-player strong {
+        font-size: .75rem;
+    }
+    
+    .music-player p {
+        font-size: .65rem;
+    }
+    
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
         min-height: auto;
-
-        height: 110px;
-
-        top: auto;
-
-        bottom: 0;
-
+        padding: 40px 20px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .hero-image {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    
+    .hero-image img {
+        max-width: 380px;
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-slogan {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-buttons button {
+        padding: 12px 25px;
+        font-size: .9rem;
+    }
+    
+    /* Stats */
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .card h3 {
+        font-size: 2rem;
+    }
+    
+    /* Games */
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .game-image img {
+        height: 200px;
+    }
+    
+    /* Specs */
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .spec-card {
         padding: 20px;
-
-        gap: 12px;
     }
-
-    .botoes .botao {
-
-        width: 65px;
-
-        height: 65px;
+    
+    /* Fact */
+    .fact {
+        padding: 40px 20px;
     }
-
-    .botoes .botao img {
-
-        max-width: 65px;
+    
+    .fact-text {
+        font-size: 1rem;
     }
-
+    
+    /* Modal */
+    .modal-content {
+        max-width: 95%;
+    }
+    
+    .modal-banner img {
+        height: 200px;
+    }
+    
+    .modal-info {
+        padding: 20px;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* CELULARES MENORES */
-
 @media (max-width: 425px) {
-
-    main .console .imagem {
-
-        height: 70vh;
+    main section {
+        padding: 20px 15px;
     }
-
-    main::after {
-
-        background: linear-gradient(0deg,
-                #000 10%,
-                rgba(0, 0, 0, 0) 70%) no-repeat;
-
-        width: 100vw;
+    
+    .hero-title {
+        font-size: 2.2rem;
     }
-
-    .conteudo {
-
-        bottom: 110px;
-
+    
+    .hero-image img {
+        max-width: 380px;
+        width: 100%;
+    }
+    
+    .hero-buttons button {
+        padding: 10px 20px;
+        font-size: .8rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .card {
         padding: 20px;
     }
-
-    .conteudo .nome-console {
-
-        font-size: 24px;
+    
+    .card h3 {
+        font-size: 1.5rem;
     }
-
-    .conteudo .descricao {
-
-        font-size: 13px;
-
-        line-height: 20px;
+    
+    .card p {
+        font-size: .85rem;
     }
-
-    .botoes {
-
-        height: 100px;
-
+    
+    .games-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .game-image img {
+        height: 150px;
+    }
+    
+    .game-content {
         padding: 15px;
     }
-
-    .botoes .botao {
-
+    
+    .game-content h3 {
+        font-size: 1rem;
+    }
+    
+    .game-button {
+        padding: 8px 15px;
+        font-size: .75rem;
+    }
+    
+    .spec-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .spec-card {
+        padding: 15px;
+    }
+    
+    .spec-card i {
+        font-size: 1.5rem;
+    }
+    
+    .spec-value {
+        font-size: .9rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .fact h2 {
+        font-size: 1.5rem;
+    }
+    
+    .fact-text {
+        font-size: .9rem;
+    }
+    
+    .topbar {
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .timeline .console {
         width: 50px;
-
-        height: 50px;
     }
-
-    .botoes .botao img {
-
-        max-width: 50px;
+    
+    .timeline .console h4 {
+        font-size: .7rem;
     }
-
+    
+    .timeline .console span {
+        font-size: .6rem;
+    }
+    
+    .timeline .console::before {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .music-player {
+        display: none;
+    }
+    
+    /* Modal mobile */
+    .modal-banner img {
+        height: 150px;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .modal-info {
+        padding: 15px;
+    }
+    
+    .modal-close {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
 }
 
 /* CELULAR NA HORIZONTAL */
-
 @media (max-height: 500px) and (orientation: landscape) {
-
-    main .console .imagem {
-
-        height: 100vh;
-
-        object-fit: cover;
+    .hero {
+        flex-direction: row;
+        min-height: auto;
+        padding: 30px 20px;
     }
-
-    main::after {
-
-        width: 100vw;
-
-        background: linear-gradient(90deg,
-                #000 35%,
-                rgba(0, 0, 0, 0) 80%);
+    
+    .hero-image img {
+        max-width: 380px;
+        width: 100%;
     }
-
-    .conteudo {
-
-        left: 30px;
-
-        max-width: 50%;
-
-        padding: 20px;
+    
+    .hero-title {
+        font-size: 2rem;
     }
-
-    .conteudo .nome-console {
-
-        font-size: 22px;
+    
+    .hero-description {
+        font-size: .9rem;
+        margin-bottom: 15px;
     }
-
-    .conteudo .descricao {
-
-        font-size: 12px;
-
-        line-height: 18px;
+    
+    .hero-buttons button {
+        padding: 8px 18px;
+        font-size: .8rem;
     }
-
-    .botoes {
-
-        /* ALTERAÇÃO
-           botões voltam para lateral
-        */
-        width: 110px;
-
-        flex-direction: column;
-
-        height: 100vh;
-
-        right: 0;
-
-        top: 0;
-
-        bottom: auto;
+    
+    .game-image img {
+        height: 120px;
     }
-
-    .botoes .botao {
-
-        width: 50px;
-
-        height: 50px;
+    
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
     }
-
-    .botoes .botao img {
-
-        max-width: 50px;
+    
+    .card {
+        padding: 15px;
     }
-
+    
+    .card h3 {
+        font-size: 1.2rem;
+    }
 }
