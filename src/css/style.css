@@ -993,3 +993,24 @@ UTILITÁRIOS
 .text-center {
     text-align: center;
 }
+
+
+
+.copy {
+    text-align: center;
+    display: block;           /* ← IMPORTANTE: span vira block para centralizar */
+    margin-top: 35px;
+    padding: 16px 0 8px;      /* ← Mais espaço vertical */
+    color: rgba(79, 100, 90, 0.8);            /* ← Tom mais suave */
+    font-size: 0.75rem;        /* ← 12px (mais legível que 10px) */
+    font-weight: 300;          /* ← Mais leve */
+    letter-spacing: 0.5px;     /* ← Espaçamento entre letras */
+    /*border-top: 1px solid rgba(192, 128, 87, 0.3);  ← Linha sutil separando */
+    width: 100%;
+}
+
+/* Versão com hover (se quiser um toque especial) */
+.copy:hover {
+    color: #00ff41; /* Muda cor ao passar o mouse */
+    transition: color 0.3s ease;
+}
